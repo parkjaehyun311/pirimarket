@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>반려동물 연예인 테스트</title>
+    <meta name="title" content="반려동물 연예인 테스트">
+    <meta name="subject" content="내 반려동물이 연예인으로 변한다면?!">
+    <meta name="keywords"
+        content="반려동물,연예인,닮은연예인">
+    <meta name="author" content="조코딩">
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://animalface.site" />
+    <meta property="og:url" content="https://animalface.site" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="반려동물 연예인 테스트" />
+    <meta property="og:description"
+        content="내 반려동물이 연예인으로 변한다면?!" />
+    <meta property="og:image"
+        content="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fc0eq42%2FbtqCQpiFhFn%2F8KPaOP9q8PXpJFRL7if55K%2Fimg.jpg" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e64b3727e862b06"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145482737-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-145482737-6');
+    </script>
+</head>
+
+<body>
+    <nav class="p-3 container navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="https://animalface.site/">반려동물 연예인 테스트</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </nav>
+    <section class="section">
+        <h1 class="title">반려동물 연예인 테스트</h1>
+        <h2 class="subtitle">내 반려동물이 연예인으로 변한다면?</h2>
+
+    </section>
+    <section class="youtube pb-3" id="yotube-mid-link">
+        <div class="container mt-3 youtube-cover d-flex flex-row-reverse align-items-center"
+            onclick="gtag('event', '조코딩 유튜브 클릭', {'event_category': '조코딩 유튜브 클릭','event_label': '화면 중간'});">
+
+            <a href="http://piri-mall.com/?utm_source=yunyein&utm_medium=click&utm_campaign=ad" class="youtube-link">By
+                피리마켓(도움 : 조코딩 유튜브 채널)</a>
+
+        </div>
+
+    </section>
+    <h3 class="pb-2 d-flex justify-content-center">성별을 선택하세요</h3>
+    <section class="d-flex justify-content-center">
+        <p class="d-flex align-items-center pr-3">암컷</p>
+        <div>
+            <input type="checkbox" id="gender">
+            <label for="gender">
+                <span class="knob">
+                    <i></i>
+                </span>
+            </label>
+        </div>
+        <p class="d-flex align-items-center pl-3">수컷</p>
+    </section>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <div class="mt-3 container file-upload">
+        <div class="image-upload-wrap">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="drag-text">
+                <img src="https://user-images.githubusercontent.com/61392526/108456027-b583f000-72b2-11eb-89b7-55ffc764b4f7.png" class="mt-5 pt-5 upload">
+                <h3 class="mb-5 pb-5 pt-4  upload-text">반려동물 사진을 올려놓거나 눌러서 업로드하세요!</h3>
+            </div>
+        </div>
+        <div class="file-upload-content">
+            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+            <div id="loading" class="animated bounce">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <p class="text-center">머신러닝으로 가장 비슷한 느낌과 인상을 분석중입니다.</p>
+            </div>
+            <p class="result-message"></p>
+            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+            <div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
+
+            <div class="pt-3 image-title-wrap">
+                <button type="button p-2" class="try-again-btn" onclick="gaReload1();" data-toggle="modal"
+                    data-target="#adModal">
+                    <span class="try-again-text">다른 사진으로 재시도</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="coupang" class="container d-flex justify-content-center">
+        <script src="https://ads-partners.coupang.com/g.js"></script>
+        <script>
+            new PartnersCoupang.G({
+                "id": 141621,
+                "subId": null
+            });
+        </script>
+    </div> -->
+    <div class="mt-2 container d-flex justify-content-center ad-banner">
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1ibeto5pa83fn" data-ad-width="320"
+            data-ad-height="100"></ins>
+    </div>
+    <div class="mt-2 container d-flex justify-content-center ad-banner">
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1jefy9znk6ibb" data-ad-width="300"
+            data-ad-height="250"></ins>
+    </div>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    <section id="yotube-bottom-link" class="mt-2 d-flex flex-column justify-content-center align-items-center"
+        onclick="gtag('event', '조코딩 유튜브 클릭', {'event_category': '조코딩 유튜브 클릭','event_label': '하단 광고'});">
+        <!-- <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="d-flex flex-column justify-content-center align-items-center">
+            <img class="ad-banner"src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FdHfMHS%2FbtqDfCJdLpH%2F6xKAC0w10kTrGjhll02SOK%2Fimg.jpg" alt="조코딩 유튜브 홍보"/>
+            <span>이런 앱을 직접 만들어보고 싶지 않으신가요? 조코딩 채널을 구독해보세요!</span>
+        </a> -->
+
+        <h4 class="mt-1">우리 아이를 위한 건강하고 엄선된 사료가 필요하다면?</h4>
+        <img src="https://user-images.githubusercontent.com/61392526/108456097-dd735380-72b2-11eb-8aca-2353457c2de6.png" class=" upload">
+        <a href="http://piri-mall.com/?utm_source=yunyein&utm_medium=click&utm_campaign=ad">피리마켓 <-클릭 </a>
+    </section>
+    <div class="container pt-3">
+        <div id="disqus_thread"></div>
+    </div>
+
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="adModal" tabindex="-1" role="dialog" aria-labelledby="adModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adModalLabel">재밌게 하셨다면 건강하고 엄선된 사료를 판매하는 피리마켓에도 방문 부탁드려요 :)</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-t89oh3sc0ew5" data-ad-width="300"
+                        data-ad-height="250"></ins>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button p-2" class="try-again-btn" onclick="gaReload2();">
+                        <span class="try-again-text">다른 사진으로도 해보기 </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function gaReload1() {
+            gtag('event', '다른 사진으로 재시도 1차', {
+                'event_category': '다른 사진으로 재시도'
+            });
+        }
+        function gaReload2() {
+            gtag('event', '다른 사진으로 재시도 2차', {
+                'event_category': '다른 사진으로 재시도'
+            });
+            window.location.reload();
+        }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('.image-upload-wrap').hide();
+                    $('#loading').show();
+                    $('.file-upload-image').attr('src', e.target.result);
+                    $('.file-upload-content').show();
+                    $('.image-title').html(input.files[0].name);
+                };
+                reader.readAsDataURL(input.files[0]);
+                init().then(function () {
+                    console.log("hello");
+                    predict();
+                    $('#loading').hide();
+                });
+            } else {
+                removeUpload();
+            }
+        }
+
+        function removeUpload() {
+            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+            $('.file-upload-content').hide();
+            $('.image-upload-wrap').show();
+        }
+        $('.image-upload-wrap').bind('dragover', function () {
+            $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function () {
+            $('.image-upload-wrap').removeClass('image-dropping');
+        });
+    </script>
+    <script type="text/javascript">
+        let URL;
+        const urlMale = "https://teachablemachine.withgoogle.com/models/-uiN_WAi0/";
+        const urlFemale = "https://teachablemachine.withgoogle.com/models/wyKpPtCnp/";
+        let model, webcam, labelContainer, maxPredictions;
+        async function init() {
+            if (document.getElementById("gender").checked) {
+                URL = urlMale;
+            } else {
+                URL = urlFemale;
+            }
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) {
+                var element = document.createElement("div")
+                element.classList.add("d-flex");
+                labelContainer.appendChild(element);
+            }
+        }
+        async function predict() {
+            var image = document.getElementById("face-image")
+            const prediction = await model.predict(image, false);
+            prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+            console.log(prediction[0].className);
+            var resultpic, resultTitle, resultExplain, resultCeleb;
+            if (document.getElementById("gender").checked) {
+                gtag('event', '동물상 테스트 수행', {
+                    'event_category': '동물상 테스트 수행',
+                    'event_label': '남자'
+                });
+                switch (prediction[0].className) {
+                    case "럭키블루스미스":
+                        
+                        resultTitle = "럭키 블루스미스"
+                        resultImage="https://user-images.githubusercontent.com/61392526/108447173-c4fb3d00-72a2-11eb-8328-2098fccefbc9.png"
+                        resultExplain = "냉미남이면서도 부드러운 인상을 가진 당신의 반려동물은 활발한 성격으로 어디에서나 사랑받습니다. 어디에서나 인기 만점이라 관심이 필요하지 않아 보이지만 오히려 그 누구보다 관심을 갈구하고 있으니 애정 주는걸 아끼지 마세요!"
+                        resultCeleb = "좋아하는 간식 : 피리마켓 찹앤찹 찹찹트릿 연어"
+                        gtag('event', '남자 결과 강아지상', { 'event_category': '남자 결과' });
+                        
+                        break;
+                    case "데이비드간디":
+                        resultTitle = "데이비드 간디"
+                        resultImage="https://user-images.githubusercontent.com/61392526/108447245-e2c8a200-72a2-11eb-90ac-69b12de2c130.png"
+                        resultExplain = "무뚝뚝해 보이는 인상은 자칫 차가워 보이기도 하지만 묘한 매력을 풍겨 언제나 인기가 넘친답니다. 잘생긴걸로는 세계 최고지만 의외로 관심 받는 것을 좋아하고 주인에게는 은근히 애교쟁이인 편입니다. 운동과 산책을 좋아하니 외출하는 시간을 많이 할애해주세요!"
+                        resultCeleb = "좋아하는 간식 : 피리마켓 와그작 치킨 밀크본 덴탈껌"
+                        
+                        gtag('event', '남자 결과 고양이상', { 'event_category': '남자 결과' });
+                        break;
+                    case "피오":
+                        resultTitle = "피오"
+                        resultImage="https://user-images.githubusercontent.com/61392526/108447326-04c22480-72a3-11eb-9f8c-076d2196a044.png"
+                        resultExplain = "천진난만하고 멍뭉미 가득한 당신의 반려동물은 주변 사람들에게 기쁨을 주는 행복바이러스 입니다! 호기심이 많아 활발하며 귀엽고 순수한 외모로 항상 보호본능을 자극한답니다. 가끔은 저음으로 그리고 또 가끔은 높은 음역으로 당신을 들었다 놨다하는 분위기 메이커에요!"
+                        resultCeleb = "좋아하는 용품: [20만장 돌파]피피픽 제로 그레이패드"
+                        gtag('event', '남자 결과 토끼상', { 'event_category': '남자 결과' });
+                        break;
+                    case "정해인":
+                        resultTitle = "정해인"
+                        resultImage="https://user-images.githubusercontent.com/61392526/108447061-8feeea80-72a2-11eb-989d-1ceb009e90ac.png"
+                        resultExplain = "웃을 때 올라가는 입꼬리와 선한 눈매가 아주 매력적이며 평범하면서도 특별한 외모에서 나오는 순수함과 강인함은 모두에게 신뢰를 준답니다. 고기와 빵을 좋아하며 요리된 음식을 아주 좋아해요."
+                        resultCeleb = "좋아하는 간식 : 피리마켓 찹앤찹 찹찹트릿 닭가슴살"
+                        gtag('event', '남자 결과 공룡상', { 'event_category': '남자 결과' });
+                        break;
+                    case "이제훈":
+                        resultTitle = "이제훈"
+                        resultImage="https://user-images.githubusercontent.com/61392526/108447387-1f949900-72a3-11eb-9d6b-64c2b4e9f9ff.png"
+                        resultExplain = "풋풋한 대학생인것 같으면서도 고등학생 같기도 한 다양한 모습을 보여주는 당신의 반려 동물은 진중하면서도 쾌활하답니다. 항상 규칙을 잘지키고 야단법석을 피우지 않는 점잖은 성격이며 일탈을 하지 않아서 주인님께 신뢰를 준다고 하네요 !"
+                        resultCeleb = "좋아하는 용품 : 피리마켓 피피픽 살균탈취제"
+                        gtag('event', '남자 결과 곰상', { 'event_category': '남자 결과' });
+                        break;
+                    case "박보검":
+                        resultTitle = "박보검"
+                        resultImage="https://user-images.githubusercontent.com/61392526/108447456-3b983a80-72a3-11eb-86a3-30e8433a7222.png"
+                        resultExplain = "훈남에 얼짱출신인 당신의 반려동물은 평소 잘생기고 귀여운걸로 주변에 소문이 자자해요! 의젓하면서도 눕혀놔도 무너지지 않는 외모는 주인님마저도 질투를 불러일으키곤 한답니다"
+                        resultCeleb = "좋아하는 간식 : 라포그 강아지 덴탈껌 코어덴탈츄"
+                        gtag('event', '남자 결과 곰상', { 'event_category': '남자 결과' });
+                        break;
+                    default:
+                        resultTitle = "알수없음"
+                        resultImage="https://user-images.githubusercontent.com/61392526/108445219-5a94cd80-729f-11eb-870a-5d98228522cc.png"
+                        resultExplain = ""
+                        resultCeleb = ""
+                        gtag('event', '남자 결과 알수없음', { 'event_category': '남자 결과' });
+
+                }
+            } else {
+                gtag('event', '동물상 테스트 수행', {
+                    'event_category': '동물상 테스트 수행',
+                    'event_label': '여자'
+                });
+                switch (prediction[0].className) {
+                    case "현아":
+                        resultTitle = "현아"
+                        resultImage="https://user-images.githubusercontent.com/61392526/108447988-37b8e800-72a4-11eb-89c1-ab2777cd083d.png"
+                        resultExplain = "매혹적이고 관능적인 외모는 항상 주변 반려동물의 시선을 빼앗는답니다. 그렇지만 외모만 잘난 거라고 생각하면 오산이에요 당신의 반려동물은 맡은 일도 잘 해내는 프로랍니다."
+                        resultCeleb = "좋아하는 용품 : 피리마켓 아띠지기 H형 하네스"
+                        gtag('event', '여자 결과 강아지상', { 'event_category': '여자 결과' });
+                        break;
+                    case "아만다사이프리드":
+                        resultTitle = "아만다 사이프리드"
+                        resultImage = "https://user-images.githubusercontent.com/61392526/108448078-6767f000-72a4-11eb-9dbe-91a038ec4050.png"
+                        resultExplain = "묘하게 강한 인상과 영롱한 눈빛은 보는 이들로 하여금 그 마음을 빼앗기게 하곤 해요. 신비하면서도 팜므파탈적인 반려동물의 매력은 주인도 질투하게 만든답니다. 아주 개성적이고 멋진 반려동물이에요"
+                        resultCeleb = "좋아하는 간식 : 마라피키 케어밤 오리지널"
+                        gtag('event', '여자 결과 고양이상', { 'event_category': '여자 결과' });
+                        break;
+                    case "제시":
+                        resultTitle = "제시"
+                        resultImage = "https://user-images.githubusercontent.com/61392526/108448196-9ed69c80-72a4-11eb-8380-4e9c0395ad67.png"
+                        resultExplain = "어디서나 당당하고 독특한 당신의 반려동물은 주위 시선을 신경쓰지 않아요. 항상 있는 그대로 자신의 모습을 보여준답니다. 가끔 그녀의 모습을 잘못 오해하는 경우도 있지만 그 속 마음만큼은 누구보다 깊다고 할 수 있어요!"
+                        resultCeleb = "좋아하는 영양제 : 피리마켓 IMC 강아지 멀티케어"
+                        gtag('event', '여자 결과 토끼상', { 'event_category': '여자 결과' });
+                        break;
+                    case "구혜선":
+                        resultTitle = "구혜선"
+                        resultImage = "https://user-images.githubusercontent.com/61392526/108448281-c0378880-72a4-11eb-9a95-fa7ec7e68bc7.png"
+                        resultExplain = "사슴은 닮은 당신의 반려동물은 그 초롱초롱한 눈맘울로 보는 이의 마음을 빼앗아요. 평소 그림을 그리기도 하고 노래를 흥얼거리기도 하는 등 누구보다 자유롭고 신비한 성격의 소유자랍니다!"
+                        resultCeleb = "좋아하는 장난감 : 피리마켓 스테고 덴탈트릿"
+                        gtag('event', '여자 결과 사슴상', { 'event_category': '여자 결과' });
+                        break;
+                    case "안젤라베이비":
+                        resultTitle = "안젤라 베이비"
+                        resultImage = "https://user-images.githubusercontent.com/61392526/108448328-d80f0c80-72a4-11eb-9415-a83377ee1abd.png"
+                        resultExplain = "신비한 혼혈 느낌을 내는 당신의 반려 동물은 패션에 관심이 많고 외향적인 성격이에요. 아름다운 외모와 가냘픈 몸은 주인님에게 절로 보호본능을 일으킨답니다. "
+                        resultCeleb = "좋아하는 용품 : 피리마켓 오리지널 무향 대나무 케어스프레이"
+                        gtag('event', '여자 결과 여우상', { 'event_category': '여자 결과' });
+                        break;
+                    case "한고은":
+                        resultTitle = "한고은"
+                        resultImage = "https://user-images.githubusercontent.com/61392526/108450157-093d0c00-72a8-11eb-9c99-4bec070c472f.png"
+                        resultExplain = "고양이상 그 자체인 그녀는 매혹적인 눈빛으로 주위 모두를 사로잡아요. 그렇지만 그녀는 주인님에게만 순종하는 성격이랍니다. 여러 활동과 식사를 통해 항상 건강하게 생활하는 모습을 보여줘요 "
+                        resultCeleb = "좋아하는 용품 : 아띠지기 노즈워크 스너플매트"
+                        gtag('event', '여자 결과 여우상', { 'event_category': '여자 결과' });
+                        break;
+                    case "태연":
+                        resultTitle = "태연"
+                        resultImage = "https://user-images.githubusercontent.com/61392526/108450385-781a6500-72a8-11eb-93d2-7fb0309a7d00.png"
+                        resultExplain = "가끔은 귀엽기도, 가끔은 시크하기도 한 당신의 반려동물은 볼수록 빠져드는 매력을 가지고 있어요. 가끔은 무기력 할 때도 있지만 톡톡 튀는 매력으로 존재감을 뽐내며 노래도 곧잘 부르곤 한답니다!"
+                        resultCeleb = "좋아하는 영양제 : 닥터맘마 뉴트릿 강아지 고양이 심장영양제"
+                        gtag('event', '여자 결과 여우상', { 'event_category': '여자 결과' });
+                        break;
+                    case "수지":
+                        resultTitle = "수지"
+                        resultImage = "https://user-images.githubusercontent.com/61392526/108450479-a39d4f80-72a8-11eb-8174-cdd404bfec97.png"
+                        resultExplain = "청순하면서도 단아한 당신의 반려 동물은 미인이라는 말에 전혀 부족함이 없어요. 꾸준하게 미모와 건강이 유지될 수 있는건 모두 주인님의 관심과 사랑 덕분이랍니다!"
+                        resultCeleb = "좋아하는 간식 : 피리마켓 찹앤찹 찹찹트릿 참치"
+                        gtag('event', '여자 결과 여우상', { 'event_category': '여자 결과' });
+                        break;
+                    case "박신혜":
+                        resultTitle = "박신혜"
+                        resultImage = "https://user-images.githubusercontent.com/61392526/108450548-c62f6880-72a8-11eb-9b5b-c7d32c9fa703.png"
+                        resultExplain = "모태미녀인 당신의 반려 동물은 주위에서 항상 여신이라는 소리를 듣는답니다. 연약해보이는 외모와 달리 야구와 같은 운동을 매우 좋아해요. 아이가 항상 밖에서 뛰어놀 수 있게 주인님이 많은 신경을 써주세요!"
+                        resultCeleb = "좋아하는 간식 : 피리마켓 푸디웜 오리튼튼윙"
+                        gtag('event', '여자 결과 여우상', { 'event_category': '여자 결과' });
+                        break;
+                    default:
+                        resultTitle = "알수없음"
+                        resultExplain = ""
+                        resultCeleb = ""
+                        gtag('event', '여자 결과 알수없음', { 'event_category': '여자 결과' });
+                }
+            }
+            var title = "<div class='" + prediction[0].className + "-animal-title'>" + resultTitle + "</div>"
+            // var image = "<img src=" + resultImage + "/>"
+            var image = `<img src="${resultImage}" width="50%"/>`
+            var explain = "<div class='animal-explain pt-2'>" + resultExplain + "</div>"
+            var celeb = "<div class='" + prediction[0].className + "-animal-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
+            $('.result-message').html(title + image + explain + celeb);
+            var barWidth;
+
+            for (let i = 0; i < maxPredictions; i++) {
+                console.log(prediction[i])
+                if (prediction[i].probability.toFixed(2) > 0.1) {
+                    barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+                } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                    barWidth = "4%"
+                } else {
+                    delete prediction[i]
+                }
+                var labelTitle;
+                switch (prediction[i].className) {
+                    case "박신혜":
+                        labelTitle = "박신혜"
+                        break;
+                    case "구혜선":
+                        labelTitle = "구혜선"
+                        break;
+                    case "수지":
+                        labelTitle = "수지"
+                        break;
+                    case "아만다사이프리드":
+                        labelTitle = "아만다사이프리드"
+                        break;
+                    case "안젤라베이비":
+                        labelTitle = "안젤라베이비"
+                        break;
+                    case "제시":
+                        labelTitle = "제시"
+                        break;
+                    case "한고은":
+                        labelTitle = "한고은"
+                        break;
+                    case "태연":
+                        labelTitle = "태연"
+                        break;
+                    case "현아":
+                        labelTitle = "현아"
+                        break;
+                    case "데이비드간디":
+                        labelTitle = "데이비드 간디"
+                        break;
+                    case "럭키블루스미스":
+                        labelTitle = "럭키 블루스미스"
+                        break;
+                    case "박보검":
+                        labelTitle = "박보검"
+                        break;
+                    case "이제훈":
+                        labelTitle = "이제훈"
+                        break;
+                    case "정해인":
+                        labelTitle = "정해인"
+                        break;
+                    case "피오":
+                        labelTitle = "피오"
+                        break;
+
+                    default:
+                        labelTitle = "알수없음"
+                }
+
+
+                var label = "<div class='animal-label d-flex align-items-center'>" + labelTitle + "</div>"
+                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+                labelContainer.childNodes[i].innerHTML = label + bar;
+            }
+        }
+    </script>
+
+</body>
+<!-- 
+image input box
+Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+gender toggle
+Copyright (c) 2020 by Mert Cukuren (https://codepen.io/knyttneve/pen/bPpEZY)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+
+</html>
