@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">  
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
@@ -114,7 +114,13 @@
             });
         </script>
     </div> -->
-  
+    <div class="mt-2 container d-flex justify-content-center ad-banner">
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1ibeto5pa83fn" data-ad-width="320"
+            data-ad-height="100"></ins>
+    </div>
+    <div class="mt-2 container d-flex justify-content-center ad-banner">
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1jefy9znk6ibb" data-ad-width="300"
+            data-ad-height="250"></ins>
     </div>
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
@@ -126,14 +132,49 @@
         </a> -->
 
         <h4 class="mt-1">우리 아이를 위한 건강하고 엄선된 사료가 필요하다면?</h4>
-        <img src="https://user-images.githubusercontent.com/61392526/108456097-dd735380-72b2-11eb-8aca-2353457c2de6.png" class=" upload" >
+        <img src="https://user-images.githubusercontent.com/61392526/108456097-dd735380-72b2-11eb-8aca-2353457c2de6.png" class=" upload">
         <a href="http://piri-mall.com/?utm_source=yunyein&utm_medium=click&utm_campaign=ad">피리마켓 <-클릭 </a>
     </section>
     <div class="container pt-3">
         <div id="disqus_thread"></div>
     </div>
 
-    
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="adModal" tabindex="-1" role="dialog" aria-labelledby="adModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adModalLabel">재밌게 하셨다면 건강하고 엄선된 사료를 판매하는 피리마켓에도 방문 부탁드려요 :)</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-t89oh3sc0ew5" data-ad-width="300"
+                        data-ad-height="250"></ins>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button p-2" class="try-again-btn" onclick="gaReload2();">
+                        <span class="try-again-text">다른 사진으로도 해보기 </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function gaReload1() {
+            gtag('event', '다른 사진으로 재시도 1차', {
+                'event_category': '다른 사진으로 재시도'
+            });
+        }
+        function gaReload2() {
+            gtag('event', '다른 사진으로 재시도 2차', {
+                'event_category': '다른 사진으로 재시도'
+            });
+            window.location.reload();
+        }
+    </script>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
